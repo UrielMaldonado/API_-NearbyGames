@@ -44,20 +44,13 @@ Espero que esta explicación sea útil para entender la estructura y función de
 
 ## Capturas de Pantalla Actividad 1
 <p align="center">
-  <img src="./pruebas/prueba1obtenermensajePrincipal.png" width="2000" alt="Get Data">
-  
-  <img src="./pruebas/prueba2obtenerjugadores.png" width="2000" alt="Get All Data">
-  
-  <img src="./pruebas/prueba3obtenerjugadorporId.png" width="2000" alt="Get One By ID">
-  
-  <img src="./pruebas/prueba4obtenerjugadorporEmail.png" width="2000" alt="Get One By Email">
-  
-  <img src="./pruebas/prueba5crearUsuario.png" width="2000" alt="Create Player">
-  
-  <img src="./pruebas/prueba6actualizrUsuario.png" width="2000" alt="Put Player">
-  
-  <img src="./pruebas/prueba7eliminarUsuario.png" width="2000" alt="Delete Player">
- 
+  <img src="./pruebas/prueba1obtenermensajePrincipal.png" width="400" alt="Get Data">
+  <img src="./pruebas/prueba2obtenerjugadores.png" width="400" alt="Get All Data">
+  <img src="./pruebas/prueba3obtenerjugadorporId.png" width="400" alt="Get One By ID">
+  <img src="./pruebas/prueba4obtenerjugadorporEmail.png" width="400" alt="Get One By Email">
+  <img src="./pruebas/prueba5crearUsuario.png" width="400" alt="Create Player">
+  <img src="./pruebas/prueba6actualizrUsuario.png" width="400" alt="Put Player">
+  <img src="./pruebas/prueba7eliminarUsuario.png" width="400" alt="Delete Player">
 </p>
 
 
