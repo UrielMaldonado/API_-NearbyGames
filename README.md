@@ -48,7 +48,7 @@ Espero que esta explicación sea útil para entender la estructura y función de
   
   <img src="./pruebas/prueba2obtenerjugadores.png" width="2000" alt="Get All Data">
   
-  <img src="./pruebas/pri.png.png.png" width="2000" alt="Get One By ID">
+  <img src="./pruebas/prueba3obtenerjugadorporId.png" width="2000" alt="Get One By ID">
   
   <img src="./pruebas/prueba4obtenerjugadorporEmail.png" width="2000" alt="Get One By Email">
   
