@@ -44,21 +44,22 @@ Espero que esta explicación sea útil para entender la estructura y función de
 
 ## Capturas de Pantalla Actividad 1
 <p align="center">
-  <img src="./pruebas/prueba1obtenermensajePrincipal.png" width="2000" alt="Get All Data">
+  <img src="./pruebas/prueba1obtenermensajePrincipal.png" width="2000" alt="Get Data">
   
-  <img src="./pruebas/prueba2obtenerjugadores.png" width="2000" alt="Get One By ID">
+  <img src="./pruebas/prueba2obtenerjugadores.png.png" width="2000" alt="Get All Data">
   
-  <img src="./pruebas/prueba3obtenerjugadorporId.png.png" width="2000" alt="Get One By Email">
+  <img src="./pruebas/prueba3obtenerjugadorporId.png.png.png" width="2000" alt="Get One By ID">
   
-  <img src="./pruebas/prueba4obtenerjugadorporEmail.png" width="2000" alt="Create Player">
+  <img src="./pruebas/prueba4obtenerjugadorporEmail.png.png" width="2000" alt="Get One By Email">
   
-  <img src="./pruebas/prueba5crearUsuario.png" width="2000" alt="Put Player">
+  <img src="./pruebas/prueba5crearUsuario.png.png" width="2000" alt="Create Player">
   
-  <img src="./pruebas/prueba6actualizrUsuario.png.png" width="2000" alt="Delete Player">
+  <img src="./pruebas/prueba6actualizrUsuario.png.png.png" width="2000" alt="Put Player">
   
-  <img src="./pruebas/prueba7eliminarUsuario.png.png" width="2000" alt="Patch Player">
+  <img src="./pruebas/prueba7eliminarUsuario.png.png.png" width="2000" alt="Delete Player">
  
 </p>
+
 
 
 ## Configuración del Proyecto
