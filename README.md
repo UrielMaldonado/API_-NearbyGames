@@ -40,7 +40,6 @@ El desarrollo de esta API comenzó instalando las dependencias esenciales para e
 
 - **.env:** Archivo de configuración que almacena variables de entorno sensibles, como información de la base de datos, claves secretas, etc. Este archivo es importante para mantener la seguridad de la aplicación y no debe compartirse públicamente.
 
-Espero que esta explicación sea útil para entender la estructura y función de cada elemento en tu proyecto. ¿Hay algo más en lo que pueda ayudarte?
 
 ## Capturas de Pantalla Actividad 1
 <p align="center">
