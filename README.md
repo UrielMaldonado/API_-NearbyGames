@@ -42,7 +42,6 @@ El desarrollo de esta API comenzó instalando las dependencias esenciales para e
 
 Espero que esta explicación sea útil para entender la estructura y función de cada elemento en tu proyecto. ¿Hay algo más en lo que pueda ayudarte?
 
-
 ## Capturas de Pantalla Actividad 1
 <p align="center">
   <img src="./pruebas/prueba1obtenermensajePrincipal.png" width="2000" alt="Get All Data">
