@@ -3,6 +3,7 @@ import ex from "express";
 import 'dotenv/config'
 import ROUTER from "./routes/playerRoutes.js";
 import dbconection from "./config/db.js";
+import Player from "./models/player.js";
 
 const api = ex();
 const port = process.env.PORT || 44446;
@@ -15,7 +16,7 @@ try{
     dbconection.authenticate()
     console.log("STATUS -> Conexion a la base de datos exotosa")
     console.log("STATUS -> Sincronizando a la bd con los objetos existentes")
-    dbconection.sync()
+    dbconection.sync({force:true})
     console.log("STATUS -> BD lista para realizar operaciones")
 }catch(error){
     console.error("Han ocurrido errores intentando conectarse a la BD")
