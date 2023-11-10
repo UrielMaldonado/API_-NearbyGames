@@ -24,7 +24,7 @@ const Player= dbconection.define("tbb_players",
     birthday:{
         type: DataTypes.DATE,
         allowNull:false,
-        unique:true
+        unique:false
     },
     portrait_img:{
         type: DataTypes.STRING(255),
