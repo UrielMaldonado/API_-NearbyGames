@@ -5,6 +5,7 @@ API Rest para realizar operaciones CRUD en una base de datos relacional para el 
 
 ![Logo Utxj](https://i.postimg.cc/15q3LFXF/Banner-de-Twitch-Nubes-Gamer-Chica-Morado.png)
 
+
 ## Información General
 - **Creado por:** Uriel Maldonado Cortez
 - **Asignatura:** Desarrollo Movil Integral
