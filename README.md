@@ -72,5 +72,5 @@ Ejecuta el siguiente comando para iniciar el servidor en modo de desarrollo:
 
 ```bash
 npm run dev
-
+```
 </div>

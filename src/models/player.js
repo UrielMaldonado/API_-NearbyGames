@@ -32,7 +32,6 @@ const Player= dbconection.define("tbb_players",
 }
 )
 export default Player
-
 /* use db_200931;
 
 INSERT INTO tbb_players (name, email, password, nickname, birthday, portrait_img, createdAt, updatedAt)
