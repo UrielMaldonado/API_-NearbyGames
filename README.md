@@ -1,7 +1,6 @@
 <div align="justify">
 
-# API Nearby Games
-API Rest para realizar operaciones CRUD en una base de datos relacional para el proyecto de videojuego de carreras 2D.
+# API Nearby Games: API Rest para realizar operaciones CRUD en una base de datos relacional para el proyecto de videojuego de carreras 2D.
 
 ![Logo Utxj](https://i.postimg.cc/15q3LFXF/Banner-de-Twitch-Nubes-Gamer-Chica-Morado.png)
 
