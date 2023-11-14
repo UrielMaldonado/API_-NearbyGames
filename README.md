@@ -69,7 +69,7 @@ Dentro del archivo principal server.js, se importaron las configuraciones de la 
 Implementación en playerController.js
 En el archivo playerController.js, se integró el código necesario para obtener toda la información de la tabla tbb_players. 
 
-## Capturas de Pantalla Actividad 2
+#### Capturas de Pantalla Actividad 2
 <p align="center">
 </p>
 
@@ -93,19 +93,19 @@ Eliminación permanente de registros en la tabla tbb_players mediante el uso del
 #### Actualización con PATCH por ID
 Actualizar un elemento de la tabla tbb_players utilizando la operación PATCH. Esto permite realizar modificaciones parciales en los datos de un jugador específico, proporcionando flexibilidad en las actualizaciones.
 
-## Capturas de Pantalla Actividad 2
+### Capturas de Pantalla Actividad 2
 <p align="center">
 </p>
 
-## Configuración del Proyecto
+### Configuración del Proyecto
 Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
 1. Clona el repositorio.
 2. Instala las dependencias usando `npm install`.
 
-## Configuración de la Base de Datos
+### Configuración de la Base de Datos
 Asegúrate de tener una base de datos MySQL configurada. Puedes modificar la configuración en el archivo `.env`.
 
-## Ejecutar el Servidor
+### Ejecutar el Servidor
 Ejecuta el siguiente comando para iniciar el servidor en modo de desarrollo:
 ```bash
 npm run dev
