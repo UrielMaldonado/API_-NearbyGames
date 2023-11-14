@@ -53,23 +53,61 @@ El desarrollo de esta API comenzó instalando las dependencias esenciales para e
   <img src="./pruebas/prueba7eliminarUsuario.png" width="400" alt="Delete Player">
 </p>
 
+### Actividad 2: Integración de la Conexión de Base de Datos y Creación de Ruta para Obtener Todos los Datos de la Tabla
 
+#### 2.1 Configuración de la Conexión a la Base de Datos
+
+En la carpeta `config`, se creó el archivo `db.js` para gestionar la conexión con la base de datos. Este archivo se encarga de establecer la conexión con la base de datos MongoDB. La configuración incluye parámetros como el nombre de la base de datos y opciones específicas de conexión.
+```javascript
+// config/db.js
+```
+Configuración de la Conexión a la Base de Datos
+En la carpeta config, se creó el archivo db.js para gestionar la conexión con la base de datos. Este archivo se encarga de establecer la conexión con la base de datos mysql. La configuración incluye parámetros como el nombre de la base de datos y opciones específicas de conexión.
+
+Importación de Rutas y Configuración en server.js
+Dentro del archivo principal server.js, se importaron las configuraciones de la conexión a la base de datos desde db.js y el modelo de la tabla tbb_players desde playerModel.js.
+
+Implementación en playerController.js
+En el archivo playerController.js, se integró el código necesario para obtener toda la información de la tabla tbb_players. 
+
+## Capturas de Pantalla Actividad 2
+<p align="center">
+</p>
+
+### Actividad 3: Creación de una API Completa con Funcionalidad para la Tabla tbb_players
+
+Búsqueda por ID
+En la Actividad 3.1, se implementó la funcionalidad de búsqueda por ID, permitiendo recuperar información específica de la tabla tbb_players mediante un identificador único.
+
+#### Búsqueda por Email
+Se integró el código necesario para buscar registros en la tabla tbb_players utilizando el campo de correo electrónico. 
+
+#### Creación de Datos
+Permite la inserción de nuevos registros en la tabla tbb_players.
+
+#### Actualización de Datos
+Actualiz información existente en la tabla tbb_players. Esta funcionalidad permite realizar modificaciones en los datos de un jugador específico.
+
+#### Eliminación Permanente por ID
+Eliminación permanente de registros en la tabla tbb_players mediante el uso del ID del jugador. Esto proporciona la capacidad de eliminar de manera definitiva un jugador de la base de datos.
+
+#### Actualización con PATCH por ID
+Actualizar un elemento de la tabla tbb_players utilizando la operación PATCH. Esto permite realizar modificaciones parciales en los datos de un jugador específico, proporcionando flexibilidad en las actualizaciones.
+
+## Capturas de Pantalla Actividad 2
+<p align="center">
+</p>
 
 ## Configuración del Proyecto
-
 Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
-
 1. Clona el repositorio.
 2. Instala las dependencias usando `npm install`.
 
 ## Configuración de la Base de Datos
-
 Asegúrate de tener una base de datos MySQL configurada. Puedes modificar la configuración en el archivo `.env`.
 
 ## Ejecutar el Servidor
-
 Ejecuta el siguiente comando para iniciar el servidor en modo de desarrollo:
-
 ```bash
 npm run dev
 ```
