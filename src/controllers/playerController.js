@@ -140,5 +140,4 @@ obj.findOneById = async (req, res) => {
     }
   };
   
-
 export default obj;

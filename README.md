@@ -71,6 +71,7 @@ En el archivo playerController.js, se integró el código necesario para obtener
 
 #### Capturas de Pantalla Actividad 2
 <p align="center">
+<img src="./pruebas/obtenerJugadores.png" width="400" alt="Get Data">
 </p>
 
 ### Actividad 3: Creación de una API Completa con Funcionalidad para la Tabla tbb_players
@@ -93,8 +94,13 @@ Eliminación permanente de registros en la tabla tbb_players mediante el uso del
 #### Actualización con PATCH por ID
 Actualizar un elemento de la tabla tbb_players utilizando la operación PATCH. Esto permite realizar modificaciones parciales en los datos de un jugador específico, proporcionando flexibilidad en las actualizaciones.
 
-### Capturas de Pantalla Actividad 2
+### Capturas de Pantalla Actividad 3
 <p align="center">
+<img src="./pruebas/obtenerJugador.png" width="400" alt="Get Player">
+<img src="./pruebas/obtenerJugadorEmail.png" width="400" alt="Get Email">
+<img src="./pruebas/crearJugador.png" width="400" alt="Post Player">
+<img src="./pruebas/actualizarJugador.png" width="400" alt="Update Player">
+<img src="./pruebas/eliminarJugador.png" width="400" alt="Delete Player">
 </p>
 
 ### Configuración del Proyecto

@@ -16,7 +16,7 @@ try{
     dbconection.authenticate()
     console.log("STATUS -> Conexion a la base de datos exotosa")
     console.log("STATUS -> Sincronizando a la bd con los objetos existentes")
-    dbconection.sync({force:true})
+    dbconection.sync({force:false})
     console.log("STATUS -> BD lista para realizar operaciones")
 }catch(error){
     console.error("Han ocurrido errores intentando conectarse a la BD")
