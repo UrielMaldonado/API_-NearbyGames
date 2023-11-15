@@ -103,6 +103,7 @@ Actualizar un elemento de la tabla tbb_players utilizando la operación PATCH. E
 <img src="./pruebas/eliminarJugador.png" width="400" alt="Delete Player">
 </p>
 
+
 ### Configuración del Proyecto
 Asegúrate de tener [Node.js](https://nodejs.org/) instalado.
 1. Clona el repositorio.
