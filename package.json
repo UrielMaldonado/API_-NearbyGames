@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/serve.js",
+    "db:importar": "node ./src/seed/seeder.js -i",
+    "db:eliminar": "node ./src/seed/seeder.js -e" 
   },
   "keywords": [
     "API",

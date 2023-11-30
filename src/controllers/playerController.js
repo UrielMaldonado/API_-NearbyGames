@@ -1,143 +1,138 @@
-import Player from '../models/player.js'
+import Player from "../models/player.js";
+import {dbConnection1} from "../config/db.js";
+import { where } from "sequelize";
 
-const obj = {};
+const createPlayer = async (rq,rs)=> {
+    console.log("Se ha solicitado la creacion de un nuevo usuario");
+    const{name, email, nickname, birthdate} = rq.body
+    console.log(rq.body)
+    const newPlayer = await Player.create(rq.body)
 
-obj.getAllPlayers = async (req, res) => {
-  try {
-    // Use Sequelize's findAll method to get all players
-    const players = await Player.findAll();
-    // Send the players as a JSON response
-    res.status(200).json(players);
-  } catch (error) {
-    // Handle errors, for example, send a 500 Internal Server Error status
-    console.error('Error getting all players:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
+    if(newPlayer){
+        rs.status(200);
+        rs.json(`Se ha creado un nuevo usuario con el nombre: ${name}, Email: ${email}, Apodo: ${nickname}, Fecha de Nacimiento: ${birthdate}`);
+    }
+    else{
+        rs.status(400);
+        rs.json({
+            messageStatus: `Hubo un error al intentar crear un nuevo usuario, verificar los datos ingresados de nuevo`
+           });
+    }
+ 
+}
+
+const findAll = async (rq,rs)=>{
+    console.log("Se ha solicitado la consulta de todos los jugadores");
+
+    const allPlayers =  await Player.findAll()
+    console.log(allPlayers);
+
+    if(allPlayers === null)
+    {
+       rs.json({
+        messageStatus: `No hay jugadores registrados`
+       });
+    }
+    else{
+        rs.status(200);
+        rs.json(allPlayers);
+    }
+}
+
+const FindPlayerByID = async (rq,rs)=>{
+    const playerID = rq.params.playerID
+    console.log(`Se ha solicitado buscar al jugador con el id: ${playerID}`);
+
+    const playerFound = await Player.findByPk(playerID)
+    if(!playerFound === null )
+    {
+        rs.status(400);
+        rs.json({messageStatus: `El jugador con el id : ${playerID}se ha encontrado en la DB`})
+    }
+    else{
+        rs.status(200)
+        rs.json(playerFound)
+    }
+    
+}
+
+const FindPlayerByEmail = async (rq,rs)=>{
+    const playerEmail = rq.params.playerEmail
+    console.log(`Se ha solicitado buscar al jugador con el id: ${playerEmail}`);
+
+    const playerFound = await Player.findOne({where : {email : playerEmail}});
+    if(!playerFound === null)
+    {
+        rs.status(400);
+        rs.json({messageStatus: `El jugador con el email : ${playerEmail}se ha encontrado en la DB`})
+    }
+    else{
+        rs.status(200)
+        rs.send(playerFound);
+    }
+}
+const updatePlayer = async (rq, rs) => {
+    try {
+        const playerID = rq.params.playerID;
+        console.log(`Se ha solicitado la actualización de un nuevo usuario. ID recibido: ${playerID}`);
+
+        const { name, email, nickname, password, birthdate, portrait_img } = rq.body;
+
+        const player = await Player.findByPk(playerID);
+
+        if (!player) {
+            return rs.status(404).json({ messageStatus: `No se encontró al jugador con ID: ${playerID}` });
+        }
+
+        await player.update({
+            name,
+            email,
+            nickname,
+            password,
+            birthdate,
+            portrait_img,
+        });
+
+        rs.status(200).json(player);
+    } catch (error) {
+        console.error('Error durante la actualización del jugador:', error);
+        rs.status(500).json({ error: 'Error interno del servidor' });
+    }
 };
 
 
 
-obj.findOneById = async (req, res) => {
+const changePlayerPortrait = (rq,rs)=>{
+     const playerID = rq.params.playerID
+    console.log(`Se ha solicitado un cambio con el id: ${playerID}`);
+    rs.status(200)
+    rs.send(`Se ha solicitado un cambio con el id: ${playerID}`);
+}
+const deletePlayer = async (rq, rs) => {
     try {
-      const id = req.params.id;
-      const player = await Player.findByPk(id);
-  
-      if (!player) {
-        return res.status(404).json({ error: 'Player not found' });
-      }
-      res.status(200).json(player);
-    } catch (error) {
-      console.error('Error finding player by ID:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  };
+        const playerID = rq.params.playerID;
+        console.log(`Se ha solicitado la eliminación de la cuenta: ${playerID}`);
 
-  obj.findOneByEmail = async (req, res) => {
-    try {
-      const email = req.params.Email;
-      const player = await Player.findOne({ where: { email } });
-  
-      if (!player) {
-        return res.status(404).json({ error: 'Player not found' });
-      }
-      res.status(200).json(player);
-    } catch (error) {
-      console.error('Error finding player by email:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  };
-  
+        const playerToDelete = await Player.findByPk(playerID);
 
-  obj.createOnePlayer = async (req, res) => {
-    try {
-      const { name, email, password, nickname, birthday, portrait_img } = req.body;
-  
-      const newPlayer = await Player.create({
-        name,
-        email,
-        password,
-        nickname,
-        birthday,
-        portrait_img,
-      });
-      res.status(201).json(newPlayer);
-    } catch (error) {
-      console.error('Error creating player:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  };
-  
+        if (!playerToDelete) {
+            return rs.status(404).json({ messageStatus: `No se encontró al jugador con ID: ${playerID}` });
+        }
 
-  obj.putPlayer = async (req, res) => {
-    try {
-      const id = req.params.id;
-      const { name, email, password, nickname, birthday, portrait_img } = req.body;
-  
-      const player = await Player.findByPk(id);
-  
-      if (!player) {
-        return res.status(404).json({ error: 'Player not found' });
-      }
-  
-      await player.update({
-        name,
-        email,
-        password,
-        nickname,
-        birthday,
-        portrait_img,
-      });
-      res.status(200).json(player);
-    } catch (error) {
-      console.error('Error updating player:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  };
-  
+        await playerToDelete.destroy();
 
-  obj.delPlayer = async (req, res) => {
-    try {
-      const id = req.params.id;
-      const player = await Player.findByPk(id);
-  
-      if (!player) {
-        return res.status(404).json({ error: 'Player not found' });
-      }
-  
-      await player.destroy();
-  
-      res.status(200).json({ message: 'Player deleted successfully' });
+        rs.status(200).json({ messageStatus: `Se eliminó exitosamente al jugador con ID: ${playerID}` });
     } catch (error) {
-      console.error('Error deleting player:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
+        console.error('Error durante la eliminación del jugador:', error);
+        rs.status(500).json({ error: 'Error interno del servidor' });
     }
-  };
-  
-  obj.patchPlayer = async (req, res) => {
-    try {
-      const id = req.params.id;
-      const { name, email, password, nickname, birthday, portrait_img } = req.body;
-  
-      const player = await Player.findByPk(id);
-  
-      if (!player) {
-        return res.status(404).json({ error: 'Player not found' });
-      }
-  
-      await player.update({
-        name: name || player.name,
-        email: email || player.email,
-        password: password || player.password,
-        nickname: nickname || player.nickname,
-        birthday: birthday || player.birthday,
-        portrait_img: portrait_img || player.portrait_img,
-      });
-  
-      res.status(200).json(player);
-    } catch (error) {
-      console.error('Error patching player:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  };
-  
-export default obj;
+};
+
+export {createPlayer,
+    FindPlayerByID,
+    FindPlayerByEmail,
+    updatePlayer,
+    changePlayerPortrait,
+    deletePlayer,
+    findAll
+}
